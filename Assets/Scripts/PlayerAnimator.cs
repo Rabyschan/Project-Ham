@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 // <YSA>
 
-// 플레이어 캐릭터를 사용자 입력에 따라 움직이는 스크립트
+// 플레이어 캐릭터를 사용자 입력에 따라 애니메이션을 실행하는 스크립트
 // 사용자의 입력값은 PlayerInput에서 받아올 예정
 public class PlayerAnimator : MonoBehaviour
 {
@@ -27,17 +28,26 @@ public class PlayerAnimator : MonoBehaviour
      */
 
     private Animator playerAnimator; //플레이어 캐릭터의 애니메이터
+    private PlayerMovement playerMovement;
+    AnimatorStateInfo stateInfo;
+
+    bool isJumping = false;
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
+    //GetBool("파라미터")를 사용해 상태 확인
     //SetBool("파라미터",상태)을 사용해 파라미터 상태 변경
 
     private void Update()
     {
-        //if ()
+        stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
+        //isJumping = playerMovement.isJumping;
+        JumpAnim(playerMovement.isJumping);
+        //playerAnimator.SetBool("IsJumping", false);
         //{
         //playerAnimator.SetBool("IsWalking",true);
         //playerAnimator.SetBool("IsJumping", true);
@@ -46,5 +56,26 @@ public class PlayerAnimator : MonoBehaviour
         //playerAnimator.SetBool("ClimbStart", true);
         //playerAnimator.SetBool("IsClimbing", true);
         //}
+    }
+
+    private void WalkAnim()
+    {
+
+    }
+    
+    public void JumpAnim(bool isJumping)
+    {
+        playerAnimator.SetBool("IsJumping", true);
+
+        // 점프 애니메이션이 끝난 후
+        if (stateInfo.IsName("Jump"))
+        {
+            playerAnimator.SetBool("IsJumping", false);  // 애니메이션 끝났으면 false로 변경
+        }
+    }
+
+    private void LeftMoveAnim()
+    {
+
     }
 }
