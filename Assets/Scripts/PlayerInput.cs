@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-// <CAY> //<YSA> 
+// <CAY> //<YSA> 주석 및 변수 이름 변경
 
 public class PlayerInput : MonoBehaviour
 {
@@ -19,10 +19,10 @@ public class PlayerInput : MonoBehaviour
     {
         //frontBack, leftRight 입력 여부를 실시간으로 체크
 
-        //앞뒤 입력값 감지해서 move에 넣기. (-1이면 후진, 1이면 전진)
+        //앞뒤 입력값 감지해서 frontBack에 넣기. (-1이면 후진, 1이면 전진)
         frontBack = Input.GetAxis("Vertical");
 
-        //좌우 입력값 감지해서 rotate에 넣기
+        //좌우 입력값 감지해서 leftRight에 넣기
         leftRight = Input.GetAxis("Horizontal");
     }
 

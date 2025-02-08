@@ -9,19 +9,21 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // 앞뒤 움직임의 속도
+    public float sideSpeed = 0.5f;
     public float rotateSpeed = 180f; // <YSA> 카메라 회전 속도
     public float jumpForce = 5f; // 점프 힘
 
     // 바닥 체크용
-    public bool isGrounded = false; // 지면에 닿았는지 확인
-    public bool isJumping = false;
+    private bool isGrounded = false; // 지면에 닿았는지 확인
 
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
+    private PlayerAnimator playerAnimator; // 플레이어 파라미터 활성화를 관리하는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+        playerAnimator = GetComponent<PlayerAnimator>();
         playerRigidbody = GetComponent<Rigidbody>();
 
         // 커서 잠금 상태 설정
@@ -35,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         Move_LeftRight();
         MouseRotate();
         Jump();
-        
     }
 
     // <YSA> 상하 이동
@@ -43,13 +44,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveDistance = transform.forward * playerInput.frontBack * moveSpeed * Time.deltaTime;
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        playerAnimator.WalkAnim(playerInput.frontBack);
     }
 
     // <YSA> 좌우 이동
     private void Move_LeftRight()
     {
-        Vector3 moveDistance = transform.right * playerInput.leftRight * moveSpeed * Time.deltaTime;
+        Vector3 moveDistance = transform.right * playerInput.leftRight * sideSpeed * Time.deltaTime;
         playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        playerAnimator.SideMoveAnim(playerInput.leftRight);
     }
 
     // 회전 (마우스 이동을 기준으로 회전)
@@ -65,14 +68,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
-            // <YSA> 점프 유무를 저장하는 변수
-            isJumping = true;
+            // <YSA> 점프 파라미터 활성화 (true)
+            playerAnimator.SetBool("IsJumping", true);
             // 점프는 리지드바디에 힘을 더해줍니다.
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false; // <YSA>지면 확인 변수 false로 설정
-            isJumping = false;
+            isGrounded = false; // <YSA> 지면 확인 변수 false로 설정
         }
-            
+        // <YSA> 점프 파라미터 비활성화 (false)
+        playerAnimator.JumpAnim();
     }
 
     // 바닥에 닿았는지 확인 (Trigger 사용)

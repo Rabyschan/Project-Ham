@@ -938,10 +938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  sideSpeed: 0.5
   rotateSpeed: 180
   jumpForce: 5
-  isGrounded: 0
-  isJumping: 1
 --- !u!65 &1473805205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1312,6 +1311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddae289499563cf43ae44e5e105e9b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontBackAxis: 0
+  leftRightAxis: 0
 --- !u!65 &1956738572115387796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1360,10 +1361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  sideSpeed: 0.8
   rotateSpeed: 180
   jumpForce: 5
-  isGrounded: 0
-  isJumping: 1
 --- !u!54 &1956738572115387799
 Rigidbody:
   m_ObjectHideFlags: 0
