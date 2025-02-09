@@ -11,8 +11,8 @@ public class PlayerInput : MonoBehaviour
     // 키보드 감지 결과를 저장하는 변수
     // 변수의 읽기는 바깥에서도 자유롭게 할 수 있으나,
     // 변수의 값 수정은 이 클래스 내에서만 가능하다.
-    public float frontBack { get; private set; } // 감지된 움직임 입력값
-    public float leftRight { get; private set; } // 감지된 회전 입력값
+    public float frontBack { get; private set; } // 감지된 앞뒤 움직임 입력값
+    public float leftRight { get; private set; } // 감지된 좌우 움직임 입력값
 
     // 매프레임 사용자 입력을 감지
     private void Update()

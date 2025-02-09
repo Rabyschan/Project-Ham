@@ -9,15 +9,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // 앞뒤 움직임의 속도
-    public float sideSpeed = 0.5f;
-    public float rotateSpeed = 180f; // <YSA> 카메라 회전 속도
+    public float sideSpeed = 0.5f; // <YSA> 좌우 움직임 속도
+    public float rotateSpeed = 180f; // 카메라 회전 속도
     public float jumpForce = 5f; // 점프 힘
 
     // 바닥 체크용
     private bool isGrounded = false; // 지면에 닿았는지 확인
+    private bool climbStart = false;
 
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
-    private PlayerAnimator playerAnimator; // 플레이어 파라미터 활성화를 관리하는 컴포넌트
+    private PlayerAnimator playerAnimator; // <YSA> 플레이어 파라미터 활성화를 관리하는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
 
     private void Start()
@@ -37,13 +38,22 @@ public class PlayerMovement : MonoBehaviour
         Move_LeftRight();
         MouseRotate();
         Jump();
+        ClimbStart();
     }
 
     // <YSA> 상하 이동
     private void Move_FrontBack()
     {
-        Vector3 moveDistance = transform.forward * playerInput.frontBack * moveSpeed * Time.deltaTime;
-        playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        if (!climbStart)
+        {
+            Vector3 moveDistance = transform.forward * playerInput.frontBack * moveSpeed * Time.deltaTime;
+            playerRigidbody.MovePosition(playerRigidbody.position + moveDistance);
+        }
+        else
+        {
+            //playerRigidbody.MovePosition(playerRigidbody.position);
+        }
+
         playerAnimator.WalkAnim(playerInput.frontBack);
     }
 
@@ -63,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + mouseX, 0);
     }
 
-    // 점프
+    // <YSA> 점프
     private void Jump()
     {
         if (isGrounded && Input.GetButtonDown("Jump"))
@@ -78,12 +88,29 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.JumpAnim();
     }
 
-    // 바닥에 닿았는지 확인 (Trigger 사용)
+    // <YSA> 타고 오르기
+    private void ClimbStart()
+    {
+        // <YSA> 식물에 닿았을 때/ 점프를 눌렀을 때
+        if (climbStart && Input.GetButtonDown("Jump"))
+        {
+            // <YSA> Climb Sub-State Machine 활성화 (true)
+            playerAnimator.SetBool("ClimbStart", true);
+        }
+        // <YSA> IsJumping, ClimbStart 파라미터 비활성화 (false) /IsClimbing 파라미터 활성화 (true)
+        playerAnimator.ClimbStartAnim();
+    }
+
+    // 바닥에 닿았는지 확인 (Trigger 사용) // <YSA> 식물과 닿았는지 확인
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ground")) // 바닥 태그를 비교합니다.
         {
             isGrounded = true; // 바닥에 닿으면 true로 설정
+        }
+        else if (other.CompareTag("Plants")) // <YSA> 식물태그인지 확인
+        {
+            climbStart = true; // <YSA> 식물에 닿으면 true로 설정
         }
     }
 

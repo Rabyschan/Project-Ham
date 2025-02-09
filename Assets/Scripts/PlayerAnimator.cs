@@ -38,10 +38,18 @@ public class PlayerAnimator : MonoBehaviour
     public float frontBackAxis = 0f; // 앞뒤 입력값 저장
     public float leftRightAxis = 0f; // 좌우 입력값 저장
 
+    private bool climbStart = false;
+
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
+    }
+
+    // GetCurrentAnimatorStateInfo를 사용해 레이어 0의 상태 확인
+    private void Update()
+    {
+        stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
     }
 
     // SetBool("파라미터",상태)을 사용해 외부 파라미터 활성화 변경
@@ -51,12 +59,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             playerAnimator.SetBool(paramName, value);
         }
-    }
-
-    // GetCurrentAnimatorStateInfo를 사용해 레이어 0의 상태 확인
-    private void Update()
-    {
-        stateInfo = playerAnimator.GetCurrentAnimatorStateInfo(0);
     }
 
     // 움직임이 없을 때 IsWalking을 false로 변경
@@ -90,14 +92,15 @@ public class PlayerAnimator : MonoBehaviour
         }
     }
 
+    // 움직임이 없을 때 Left와 Right를 false로 변경
     public void SideMoveAnim(float leftRight)
     {
-        // 앞으로 입력값
+        // 우측으로 입력값
         if (leftRight > 0 && leftRightAxis <= 0)
         {
             playerAnimator.SetBool("Right", true);
         }
-        // 뒤로 입력값
+        // 좌측으로 입력값
         else if (leftRight < 0 && leftRightAxis >= 0)
         {
             playerAnimator.SetBool("Left", true);
@@ -110,5 +113,17 @@ public class PlayerAnimator : MonoBehaviour
         }
         // 마지막 입력값을 저장
         leftRightAxis = leftRight;
+    }
+
+    // 현재 애니메이션 상태가 ClimbStart일때
+    // IsJumping, ClimbStart 파라미터 비활성화 (false) /IsClimbing 파라미터 활성화 (true)
+    public void ClimbStartAnim()
+    {
+        if (stateInfo.IsName("ClimbStart"))
+        {
+            playerAnimator.SetBool("IsJumping", false);
+            playerAnimator.SetBool("ClimbStart", false);
+            playerAnimator.SetBool("IsClimbing", true);
+        }
     }
 }
