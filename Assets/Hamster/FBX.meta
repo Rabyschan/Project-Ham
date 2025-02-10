@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 872585b1d6915f64aa6681418c5f478c
+<<<<<<<< Updated upstream:Assets/Hamster/FBX.meta
+guid: ecb31ca7387478946bf663554848777b
+========
+guid: 337049b75e43a47439bc230376d9f91b
+>>>>>>>> Stashed changes:Assets/_Assets/Project/Resource.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

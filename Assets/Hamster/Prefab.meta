@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: bde31294008116a4abbacf116e9a224f
+<<<<<<<< Updated upstream:Assets/Hamster/Prefab.meta
+guid: c2e0439fb7027cd499dd459c1943e69c
+========
+guid: b6a42a0a9b5fc7049b2aeb1f8bb2bf4f
+>>>>>>>> Stashed changes:Assets/_Assets/Project/Prefab.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 781f4fb1e1aa03f4eb3b034242d4f5ab
+<<<<<<<< Updated upstream:Assets/Hamster/Animation/Climbing.anim.meta
+guid: 2aa6d001541d1cd43a10150ed40f319a
+========
+guid: be2c38c1d71f6204bbd3901c1d6551b6
+>>>>>>>> Stashed changes:Assets/LowPolyInterior/Materials/LowPolyInterior_Glass.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

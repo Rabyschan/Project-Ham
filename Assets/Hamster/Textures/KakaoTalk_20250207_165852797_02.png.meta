@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: de476c9d41a553c47b5e6c057ce10f6f
+<<<<<<<< Updated upstream:Assets/Hamster/Textures/KakaoTalk_20250207_165852797_02.png.meta
+guid: 14f995f9b551c3f4b8d32e73bf02f548
+========
+guid: 6385010058ca6c64081d0d80ac7ccd34
+>>>>>>>> Stashed changes:Assets/_Assets/250206/textures 1/Image_0.003.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

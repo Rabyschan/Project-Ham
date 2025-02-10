@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: cfd36f3a1b4791244a01c8c8db3f2237
+<<<<<<<< Updated upstream:Assets/Hamster/Textures.meta
+guid: 9baf8793c9352364fb8b39eb0da03a11
+========
+guid: 620f04bd8a4e3d44eba8ef75c1c9b35e
+>>>>>>>> Stashed changes:Assets/_Assets.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

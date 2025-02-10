@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 33430d3ff0d5b30449ddacf61e70a309
+<<<<<<<< Updated upstream:Assets/Hamster/Animation/ClimbingIdle.anim.meta
+guid: 7fe028fc3ed351a439185ee91a1da717
+========
+guid: 0054cbb2942940f46a8872a0c6f7e495
+>>>>>>>> Stashed changes:Assets/LowPolyInterior/Materials/LowPolyInterior_MAIN.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

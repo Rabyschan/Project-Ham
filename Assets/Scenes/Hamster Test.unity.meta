@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 8624bdc54906e3741a591b7d96be5f4a
+<<<<<<<< Updated upstream:Assets/Scenes/Hamster Test.unity.meta
+guid: 635ef4ec06f3fd348a6ead9c791002eb
+========
+guid: cb8c9c040caaa85498b7d5382590443b
+>>>>>>>> Stashed changes:Assets/LowPolyInterior/Scenes/LowPolyInterior_Demo.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

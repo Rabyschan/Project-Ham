@@ -122,6 +122,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &182562324
 GameObject:
   m_ObjectHideFlags: 3
@@ -220,6 +221,92 @@ MonoBehaviour:
   DampingIntoCollision: 0.2
   DampingFromCollision: 2
 --- !u!1 &403424824
+=======
+--- !u!1001 &196067084
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 179805775134842488, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitchen
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13.688166
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.688166
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13.688166
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 663468177267197122, guid: 3d32a470af3b4c44ca5f7396ae4f9b06,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d32a470af3b4c44ca5f7396ae4f9b06, type: 3}
+--- !u!1 &330585543
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -986,6 +1073,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1091101188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,15 +1490,21 @@ Transform:
   - {fileID: 777056806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 832575519}
+<<<<<<< Updated upstream
   - {fileID: 1456478130}
   - {fileID: 817656564}
   - {fileID: 2087490703}
   - {fileID: 1091101193}
   - {fileID: 403424826}
   - {fileID: 1126828728}
+=======
+  - {fileID: 196067084}
+>>>>>>> Stashed changes

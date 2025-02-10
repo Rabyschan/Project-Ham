@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 63a3610bd67867e4fbdf090c65e12cde
+<<<<<<<< Updated upstream:Assets/Hamster/Animation/ClimbStart.anim.meta
+guid: 27e66b5eb3d6efd45a82a71d7272740d
+========
+guid: 8842268889f143f438d0da48ecda6d16
+>>>>>>>> Stashed changes:Assets/_Assets/250206/Materials/Image_0.001.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

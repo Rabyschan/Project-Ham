@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: db13d346888502040885df7506a52cf5
+<<<<<<<< Updated upstream:Assets/Hamster/Animation.meta
+guid: 94faffad5af8fd544b2e055576729c5e
+========
+guid: 828b6620bae27a94a9fc965c601de6e3
+>>>>>>>> Stashed changes:Assets/Furniture.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: d1c3109bdb54ad54c8a2b2838528e640
+<<<<<<<< Updated upstream:Assets/Scenes/Map Test.unity.meta
+guid: f5f2ffd3bd971e241ac1c389ae85067b
+========
+guid: 245d0723103d5d140a83d27249c3df7a
+>>>>>>>> Stashed changes:Assets/Furniture/All models.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

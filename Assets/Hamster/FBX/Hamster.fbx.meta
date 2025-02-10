@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: f5feb549672f3e34fb63c03e0bddcdcc
+<<<<<<<< Updated upstream:Assets/Hamster/FBX/Hamster.fbx.meta
+guid: d5057b22789c8eb4b92c0e62c55ac35c
+========
+guid: ddfa8e12fa6a5e74682529f60b2940c0
+>>>>>>>> Stashed changes:Assets/_Assets/250206/250206_JK.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
