@@ -112,6 +112,7 @@ public class PlayerAnimator : MonoBehaviour
         if (stateInfo.IsName("Jump"))
         {
             playerAnimator.SetBool("IsJumping", false);
+            playerMovement.isJumping = false;
         }
     }
 

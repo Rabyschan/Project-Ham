@@ -85,19 +85,28 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + mouseX, 0);
     }
 
+    public bool isJumping;
+    public bool isClimbing;
+
     // <YSA> 점프
     private void Jump()
     {
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump")&& !isJumping)
         {
+            isJumping = true;
             // <YSA> 점프 파라미터 활성화 (true)
             playerAnimator.SetBool("IsJumping", true);
             // 점프는 리지드바디에 힘을 더해줍니다.
-            playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false; // <YSA> 지면 확인 변수 false로 설정
+            //playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            //isJumping = false; // <YSA> 지면 확인 변수 false로 설정
         }
         // <YSA> 점프 파라미터 비활성화 (false)
         playerAnimator.JumpAnim();
+    }
+
+    public void OnJump()
+    {
+        playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     // <YSA> 타고 오르기
@@ -106,7 +115,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded) return;
 
         playerAnimator.SetBool("ClimbStart", true);
-        isGrounded = false;
+        //isGrounded = false;
+        isClimbing = true;
         //playerRigidbody.AddForce(Vector3.up * 0.1f, ForceMode.Impulse);
         // <YSA> 플레이어의 캡슐콜라이더를 Y축으로 변경
         playerAnimator.playerCapsuleCollider.direction = 1;
@@ -118,6 +128,10 @@ public class PlayerMovement : MonoBehaviour
 
         // <YSA> IsJumping, ClimbStart 파라미터 비활성화 (false) /IsClimbing 파라미터 활성화 (true)
         playerAnimator.ClimbStartAnim();
+    }
+    public void OnClimb()
+    {
+
     }
 
     // <YSA> 바닥일 때
@@ -158,45 +172,4 @@ public class PlayerMovement : MonoBehaviour
             // <YSA> 전선의 콜라이더 비활성화 => 올라가면 비활성화하는 스크립트 필요
         }
     }
-    /* ontrigger
-    // 바닥에 닿았는지 확인 (Trigger 사용) // <YSA> 식물과 닿았는지 확인
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ground")) // 바닥 태그를 비교합니다.
-        {
-            isGrounded = true; // 바닥에 닿으면 true로 설정
-            playerAnimator.isClimbStartZone = false;
-            climbStart = false;
-            playerRigidbody.useGravity = true;
-            playerRigidbody.constraints = RigidbodyConstraints.None;
-        }
-        else if (other.CompareTag("Plants")) // <YSA> 식물태그인지 확인
-        {
-            climbStart = true; // <YSA> 식물에 닿으면 true로 설정
-            playerAnimator.frontBackAxis = 0;
-            playerAnimator.isClimbStartZone = true;
-            playerRigidbody.useGravity = false;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Plants"))
-        {
-            //playerRigidbody.useGravity = true;
-            playerAnimator.SetBool("ClimbStart", false);
-            playerAnimator.isClimbStartZone = false;
-            climbStart = false;
-        }
-    }
-    
-     바닥에서 떨어졌을 때 (선택사항: 지면을 벗어난 상태에서)
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Ground")) // 바닥 태그를 비교합니다.
-        {
-            isGrounded = false; // 지면에서 떨어지면 false로 설정
-        }
-    }
-    */
 }
