@@ -34,15 +34,17 @@ public class PlayerAnimator : MonoBehaviour
     AnimatorStateInfo stateInfo;
 
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
+    public CapsuleCollider playerCapsuleCollider; // <YSA> 플레이어 캐릭터의 캡슐 콜라이더
 
     public float frontBackAxis = 0f; // 앞뒤 입력값 저장
     public float leftRightAxis = 0f; // 좌우 입력값 저장
-
-    private bool climbStart = false;
+    public float upDownAxis = 0f; // 위아래 입력값 저장
+    public bool isClimbStartZone = false;
 
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
+        playerCapsuleCollider = GetComponent<CapsuleCollider>();
         playerInput = GetComponent<PlayerInput>();
     }
 
@@ -58,6 +60,20 @@ public class PlayerAnimator : MonoBehaviour
         if (playerAnimator != null)
         {
             playerAnimator.SetBool(paramName, value);
+        }
+    }
+
+    private void IdleAnim()
+    {
+        if (stateInfo.IsName("Idle"))
+        {
+            foreach (AnimatorControllerParameter param in playerAnimator.parameters)
+            {
+                if (param.type == AnimatorControllerParameterType.Bool)
+                {
+                    playerAnimator.SetBool(param.name, false);
+                }
+            }
         }
     }
 
@@ -115,15 +131,54 @@ public class PlayerAnimator : MonoBehaviour
         leftRightAxis = leftRight;
     }
 
-    // 현재 애니메이션 상태가 ClimbStart일때
-    // IsJumping, ClimbStart 파라미터 비활성화 (false) /IsClimbing 파라미터 활성화 (true)
+    /* 현재 애니메이션 상태가 ClimbStart일때
+     * IsJumping, ClimbStart, IsWalking 파라미터 비활성화(false)
+     * IsClimbing 파라미터 활성화(true) */
     public void ClimbStartAnim()
     {
         if (stateInfo.IsName("ClimbStart"))
         {
             playerAnimator.SetBool("IsJumping", false);
-            playerAnimator.SetBool("ClimbStart", false);
+            playerAnimator.SetBool("IsWalking", false);
             playerAnimator.SetBool("IsClimbing", true);
         }
+        else if (stateInfo.IsName("ClimbingIdle"))
+        {
+            playerAnimator.SetBool("ClimbStart", false);
+        }
+        else if (stateInfo.IsName("ClimbEnd"))
+        {
+            playerCapsuleCollider.direction = 2;
+        }
+    }
+
+    public void ClimbAnim(float upDown)
+    {
+        // 위로 입력값
+        if (upDown > 0 && upDownAxis <= 0)
+        {
+            playerAnimator.SetBool("IsWalking", true);
+            isClimbStartZone = false;
+        }
+        // 아래로 입력값
+        else if (upDown < 0 && upDownAxis >= 0)
+        {
+            if (isClimbStartZone)
+            {
+                playerAnimator.SetBool("IsClimbing",false);
+                playerCapsuleCollider.direction = 2;
+            }
+            else
+            {
+                playerAnimator.SetBool("IsWalking", true);
+            }
+        }
+        // 입력값이 없을 때
+        else if (upDown == 0 && upDownAxis != 0)
+        {
+            playerAnimator.SetBool("IsWalking", false);
+        }
+        // 마지막 입력값을 저장
+        upDownAxis = upDown;
     }
 }
