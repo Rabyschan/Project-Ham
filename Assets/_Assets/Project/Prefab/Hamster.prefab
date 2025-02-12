@@ -1035,7 +1035,7 @@ MonoBehaviour:
   moveSpeed: 0.5
   sideSpeed: 0.3
   rotateSpeed: 180
-  jumpForce: 1
+  jumpForce: 5
   isGrounded: 0
   isJumping: 0
   isClimbing: 0
@@ -1084,7 +1084,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7707436949389789402}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
