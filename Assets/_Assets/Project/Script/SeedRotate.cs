@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SeedRotate : MonoBehaviour
 {
@@ -24,12 +25,16 @@ public class SeedRotate : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    public class Seed : MonoBehaviour, IItem
     {
-        if (other.CompareTag("Player"))
+        public int score = 1; // 증가할 점수
+
+        public void Use(GameObject target)
         {
-            _isEating = true;
-            seed.SetActive(false);
-        }   
+            //GameManager의 AddScore 실행.
+            GameManager.instance.CollectSeed(score);
+
+            Destroy(this.gameObject);
+        }
     }
 }

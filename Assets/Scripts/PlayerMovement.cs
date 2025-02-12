@@ -112,26 +112,49 @@ public class PlayerMovement : MonoBehaviour
     // <YSA> 타고 오르기
     private void Climb()
     {
-        if (!isGrounded) return;
+        if (!isGrounded || isClimbing) return;
 
+        isClimbing = true;
         playerAnimator.SetBool("ClimbStart", true);
         //isGrounded = false;
-        isClimbing = true;
+
+        Debug.Log("IsClimbing 활성화"); // 확인용 로그
+        playerAnimator.SetBool("IsClimbing", true); // <--- 여기가 실행되는지 확인
+
         //playerRigidbody.AddForce(Vector3.up * 0.1f, ForceMode.Impulse);
         // <YSA> 플레이어의 캡슐콜라이더를 Y축으로 변경
         playerAnimator.playerCapsuleCollider.direction = 1;
         // <YSA> 리지드바디 중력 비활성화
         playerRigidbody.useGravity = false;
-        //
+        //좌우 고정
         playerRigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
         //playerAnimator.SetBool("ClimbStart", true);
 
         // <YSA> IsJumping, ClimbStart 파라미터 비활성화 (false) /IsClimbing 파라미터 활성화 (true)
         playerAnimator.ClimbStartAnim();
-    }
-    public void OnClimb()
-    {
 
+        // 부드럽게 올라가기
+        StartCoroutine(ClimbCoroutine());
+    }
+    
+    //<SYJ> climb() 호출 시 ClimbCoroutine을 실핼해 부드럽게 위로 이동하는 방식
+    private IEnumerator ClimbCoroutine()
+    {
+        float climbHeight = 0.1f; // 목표 높이
+        float climbSpeed = 0.5f; // 이동 속도
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + Vector3.up * climbHeight;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < 1f)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime);
+            elapsedTime += Time.deltaTime * climbSpeed;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        isGrounded = false;
     }
 
     // <YSA> 바닥일 때
@@ -150,26 +173,85 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("ClimbStart", false);
     }
 
-    // <YSA> 바닥과 부딫혔을 때 / 전선과 부딫혔을 때
-    private void OnCollisionEnter(Collision collision)
+    //<SYJ>
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("Ground"))
+        if (other.CompareTag("Wire")) // Wire와 충돌 감지
         {
-            Ground();
-        }
-        else if (collision.collider.CompareTag("Wire"))
-        {
-            Climb();
+            if (!isClimbing) // 이미 등반 중이면 실행 안 함
+            {
+                Debug.Log("Wire 트리거 감지, Climb() 실행");
+                Climb();
+            }
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Wire")) // Wire에서 벗어났을 때
+        {
+            Debug.Log("Wire에서 벗어남, ClimbEnd() 실행");
+            ClimbEnd();
+        }
+    }
+
+    
+    // <YSA> 바닥과 부딫혔을 때 / 전선과 부딫혔을 때
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            if (!isClimbing) // 등반 중이 아닐 때만 Ground 처리
+            {
+                Ground();
+            }
+        }
+        /*
+        else if (collision.collider.CompareTag("Wire"))
+        {
+            if (!isClimbing && !climbStart) // 이미 등반 중이라면 Climb() 실행 안 함
+            {
+                Debug.Log("전선 충돌 감지, Climb() 실행");
+                climbStart = true;
+                Climb();
+            }
+        }
+        */
+    }
+    
+    /*
     // <YSA> 전선에서 벗어났을 때
     private void OnCollisionExit(Collision collision)
     {
         if (collision.collider.CompareTag("Wire"))
         {
-            Ground();
+            
+            ClimbEnd();
+            
             // <YSA> 전선의 콜라이더 비활성화 => 올라가면 비활성화하는 스크립트 필요
+
+            climbStart = false; //wire에서 벗어나면 다시 Climb 가능하도록 초기화
         }
     }
+    */
+    
+    //<SYJ> ClimbEnd()가 제대로 실행하는가
+    private void ClimbEnd()
+    {
+        if (!isClimbing) return; //이미 등반이 종료된 상태라면 실행 안 함
+
+        Debug.Log("ClimbEnd 실행됨"); // 확인용 로그
+
+        isClimbing = false; //등반 종료
+        isGrounded = true;
+
+        playerAnimator.SetBool("IsClimbing", false);
+        playerAnimator.SetBool("ClimbStart", false);
+
+        playerAnimator.playerCapsuleCollider.direction = 2;
+        playerRigidbody.useGravity = true;
+
+        playerRigidbody.constraints = RigidbodyConstraints.None;
+    }
+    
 }

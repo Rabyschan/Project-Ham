@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a734d2f957997ac4db1cab83140fc179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 450
-  seed: {fileID: 0}
-  Hamster: {fileID: 0}
+  rotationSpeed: 200
+  seed: {fileID: 1337217893792651608}
   _isEating: 0
