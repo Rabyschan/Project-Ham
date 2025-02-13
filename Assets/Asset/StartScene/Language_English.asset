@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5148febd1c4ce141bb4da870b4efa1f, type: 3}
+  m_Name: Language_English
+  m_EditorClassIdentifier: 
+  translations:
+  - key: MainStart
+    value: START
+    fontSize: 36
+    useSecondaryFont: 0
+    isBold: 0
+  - key: MainOption
+    value: OPTION
+    fontSize: 36
+    useSecondaryFont: 0
+    isBold: 0
+  - key: MainQuit
+    value: QUIT
+    fontSize: 36
+    useSecondaryFont: 0
+    isBold: 0
+  - key: Slot
+    value: SELECT
+    fontSize: 90
+    useSecondaryFont: 0
+    isBold: 0
+  - key: SlotSaveInfo
+    value: SAVING AT THIS SLOT\nARE YOU SURE?
+    fontSize: 36
+    useSecondaryFont: 1
+    isBold: 0
+  - key: SlotSaveYes
+    value: Yes
+    fontSize: 30
+    useSecondaryFont: 1
+    isBold: 0
+  - key: SlotSaveNo
+    value: No
+    fontSize: 30
+    useSecondaryFont: 1
+    isBold: 0
+  - key: SlotQuit
+    value: QUIT
+    fontSize: 60
+    useSecondaryFont: 0
+    isBold: 0
+  - key: Option
+    value: OPTION
+    fontSize: 90
+    useSecondaryFont: 0
+    isBold: 0
+  - key: OptionAudio
+    value: Audio
+    fontSize: 36
+    useSecondaryFont: 1
+    isBold: 0
+  - key: OptionAudioBackground
+    value: Background
+    fontSize: 29.2
+    useSecondaryFont: 1
+    isBold: 0
+  - key: OptionAudioSoundEffect
+    value: Sound Effect
+    fontSize: 29.2
+    useSecondaryFont: 1
+    isBold: 0
+  - key: OptionLanguage
+    value: Language
+    fontSize: 36
+    useSecondaryFont: 1
+    isBold: 0
+  - key: OptionMenuGame 1
+    value: GAME
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: OptonMenuControll 1
+    value: CONTROLL
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: OptionMenuGame 2
+    value: GAME
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: OptonMenuControll 2
+    value: CONTROLL
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: OptionQuit
+    value: Quit
+    fontSize: 60
+    useSecondaryFont: 0
+    isBold: 0
+  - key: QuitInfo
+    value: LEAVING THIS GAME\nARE YOU SURE?
+    fontSize: 36
+    useSecondaryFont: 1
+    isBold: 0
+  - key: QuitYes
+    value: Yes
+    fontSize: 30
+    useSecondaryFont: 1
+    isBold: 0
+  - key: QuitNo
+    value: No
+    fontSize: 30
+    useSecondaryFont: 1
+    isBold: 0
+  dropdownTranslations:
+  - dropdownKey: Language
+    options:
+    - English
+    - Korean
