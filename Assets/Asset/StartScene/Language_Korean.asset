@@ -123,3 +123,5 @@ MonoBehaviour:
     options:
     - "\uD55C\uAD6D\uC5B4"
     - "\uC601\uC5B4"
+  dropdownLabelFontSize: 50
+  dropdownItemFontSize: 40

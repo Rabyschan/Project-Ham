@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// <YSA>
 [System.Serializable]
 public class LanguageData
 {
@@ -61,7 +62,7 @@ public class LanguageAsset : ScriptableObject
     {
         if (translationDict.TryGetValue(key, out LanguageData data))
         {
-            return data.value;
+            return data.value.Replace("\\n","\n");
         }
         return key;
     }

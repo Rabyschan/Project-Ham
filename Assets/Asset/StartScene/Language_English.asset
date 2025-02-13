@@ -35,7 +35,7 @@ MonoBehaviour:
     isBold: 0
   - key: SlotSaveInfo
     value: SAVING AT THIS SLOT\nARE YOU SURE?
-    fontSize: 36
+    fontSize: 30
     useSecondaryFont: 1
     isBold: 0
   - key: SlotSaveYes
@@ -105,7 +105,7 @@ MonoBehaviour:
     isBold: 0
   - key: QuitInfo
     value: LEAVING THIS GAME\nARE YOU SURE?
-    fontSize: 36
+    fontSize: 30
     useSecondaryFont: 1
     isBold: 0
   - key: QuitYes
@@ -123,3 +123,5 @@ MonoBehaviour:
     options:
     - English
     - Korean
+  dropdownLabelFontSize: 24
+  dropdownItemFontSize: 22

@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 36931585}
   - component: {fileID: 36931584}
   m_Layer: 5
-  m_Name: SlotLogo_TextE
+  m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 85310484}
   - component: {fileID: 85310483}
   m_Layer: 5
-  m_Name: GameStartBTN_Text
+  m_Name: M_StartBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,7 +775,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: 138384875}
   - component: {fileID: 138384874}
   m_Layer: 5
-  m_Name: OptionBTN
+  m_Name: M_OptionBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 184148050}
   - component: {fileID: 184148051}
   m_Layer: 5
-  m_Name: ES_Slider
+  m_Name: SFX_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 291601622}
   - component: {fileID: 291601621}
   m_Layer: 5
-  m_Name: ES
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1800,7 +1800,7 @@ GameObject:
   - component: {fileID: 329290379}
   - component: {fileID: 329290378}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QT_NoBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,7 +2060,7 @@ GameObject:
   - component: {fileID: 392557555}
   - component: {fileID: 392557554}
   m_Layer: 5
-  m_Name: TNo_Btn
+  m_Name: QT_NoBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2651,7 +2651,7 @@ RectTransform:
   m_Father: {fileID: 1072969783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10.3625, y: 0}
   m_SizeDelta: {x: 40.7251, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2949,7 +2949,7 @@ GameObject:
   - component: {fileID: 486011730}
   - component: {fileID: 486011729}
   m_Layer: 5
-  m_Name: Language_TextE
+  m_Name: Language_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3105,7 +3105,7 @@ RectTransform:
   m_Father: {fileID: 1362625262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3234,7 +3234,7 @@ GameObject:
   - component: {fileID: 519446760}
   - component: {fileID: 519446759}
   m_Layer: 5
-  m_Name: Controll
+  m_Name: Option_Controll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3567,7 +3567,7 @@ GameObject:
   - component: {fileID: 601863918}
   - component: {fileID: 601863917}
   m_Layer: 5
-  m_Name: controll_Text
+  m_Name: CT_Controll_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3723,7 +3723,7 @@ RectTransform:
   m_Father: {fileID: 1041448514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3777,7 +3777,7 @@ GameObject:
   - component: {fileID: 653404425}
   - component: {fileID: 653404424}
   m_Layer: 5
-  m_Name: QuitBtn_Text
+  m_Name: S_QuitBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3858,7 +3858,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3988,7 +3988,7 @@ GameObject:
   - component: {fileID: 672417530}
   - component: {fileID: 672417529}
   m_Layer: 5
-  m_Name: QuitBtn
+  m_Name: S_QuitBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4267,7 +4267,7 @@ GameObject:
   - component: {fileID: 753069836}
   - component: {fileID: 753069835}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: QT_YesBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4312,7 +4312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: Yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0c01455f2ee1344badbab3b7ba2b098, type: 2}
   m_sharedMaterial: {fileID: 1188809761850992609, guid: f0c01455f2ee1344badbab3b7ba2b098,
@@ -4423,7 +4423,7 @@ RectTransform:
   m_Father: {fileID: 1043863052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10.3625, y: 0}
   m_SizeDelta: {x: 40.7251, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4722,7 +4722,7 @@ GameObject:
   - component: {fileID: 920372349}
   - component: {fileID: 920372348}
   m_Layer: 5
-  m_Name: Label
+  m_Name: Language
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5402,7 +5402,7 @@ GameObject:
   - component: {fileID: 1081650430}
   - component: {fileID: 1081650429}
   m_Layer: 5
-  m_Name: Controll_Text
+  m_Name: GM_Controll_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5537,7 +5537,7 @@ GameObject:
   - component: {fileID: 1124535548}
   - component: {fileID: 1124535547}
   m_Layer: 5
-  m_Name: TrashTT_Text
+  m_Name: S_TrashTT_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5612,8 +5612,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5847,7 +5847,7 @@ GameObject:
   - component: {fileID: 1139997989}
   - component: {fileID: 1139997988}
   m_Layer: 5
-  m_Name: QuitBtn
+  m_Name: O_QuitBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5993,7 +5993,7 @@ GameObject:
   - component: {fileID: 1144578369}
   - component: {fileID: 1144578368}
   m_Layer: 5
-  m_Name: controllbtn
+  m_Name: GM_ControllBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6276,7 +6276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1212384499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6627,7 +6627,7 @@ GameObject:
   - component: {fileID: 1279508848}
   - component: {fileID: 1279508847}
   m_Layer: 5
-  m_Name: OptionBTN_Text
+  m_Name: M_OptionBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6708,7 +6708,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6999,7 +6999,7 @@ GameObject:
   - component: {fileID: 1334518289}
   - component: {fileID: 1334518288}
   m_Layer: 5
-  m_Name: QuitBtn_TextE
+  m_Name: O_QuitBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7170,7 +7170,7 @@ GameObject:
   - component: {fileID: 1379217640}
   - component: {fileID: 1379217639}
   m_Layer: 5
-  m_Name: Sound_Text
+  m_Name: GM_Sound_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7582,7 +7582,7 @@ GameObject:
   - component: {fileID: 1503767846}
   - component: {fileID: 1503767845}
   m_Layer: 5
-  m_Name: T_SaveNoText
+  m_Name: ST_SaveNoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7795,7 +7795,7 @@ GameObject:
   - component: {fileID: 1539105633}
   - component: {fileID: 1539105632}
   m_Layer: 5
-  m_Name: AudioText
+  m_Name: Audio_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7930,7 +7930,7 @@ GameObject:
   - component: {fileID: 1607406155}
   - component: {fileID: 1607406154}
   m_Layer: 5
-  m_Name: T_SaveYes_Text
+  m_Name: ST_SaveYes_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7975,7 +7975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: Yes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0c01455f2ee1344badbab3b7ba2b098, type: 2}
   m_sharedMaterial: {fileID: 1188809761850992609, guid: f0c01455f2ee1344badbab3b7ba2b098,
@@ -8140,7 +8140,7 @@ GameObject:
   - component: {fileID: 1662928367}
   - component: {fileID: 1662928366}
   m_Layer: 5
-  m_Name: TrashTT_Text
+  m_Name: Q_TrashTT_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8280,7 +8280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687053398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8393,7 +8393,7 @@ GameObject:
   - component: {fileID: 1699443703}
   - component: {fileID: 1699443702}
   m_Layer: 5
-  m_Name: QuitBTN
+  m_Name: M_QuitBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8921,7 +8921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1811802297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8956,7 +8956,7 @@ GameObject:
   - component: {fileID: 1850630938}
   - component: {fileID: 1850630937}
   m_Layer: 5
-  m_Name: sound_btn
+  m_Name: CT_SoundBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9696,7 +9696,7 @@ GameObject:
   - component: {fileID: 1950199092}
   - component: {fileID: 1950199091}
   m_Layer: 5
-  m_Name: TYesBtn
+  m_Name: QT_YesBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9830,7 +9830,7 @@ GameObject:
   - component: {fileID: 1955223302}
   - component: {fileID: 1955223301}
   m_Layer: 5
-  m_Name: GameStartBTN
+  m_Name: M_StartBTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9975,7 +9975,7 @@ GameObject:
   - component: {fileID: 1958953866}
   - component: {fileID: 1958953865}
   m_Layer: 5
-  m_Name: Option
+  m_Name: Option_Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10088,7 +10088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970708832}
   m_Layer: 5
-  m_Name: SlotLogo
+  m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10126,7 +10126,7 @@ GameObject:
   - component: {fileID: 1994146564}
   - component: {fileID: 1994146563}
   m_Layer: 5
-  m_Name: sound_Text
+  m_Name: CT_Sound_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10373,7 +10373,7 @@ GameObject:
   - component: {fileID: 2044479419}
   - component: {fileID: 2044479418}
   m_Layer: 5
-  m_Name: ES_Text
+  m_Name: SFX_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10583,7 +10583,7 @@ GameObject:
   - component: {fileID: 2098673147}
   - component: {fileID: 2098673146}
   m_Layer: 5
-  m_Name: QuitBTN_Text
+  m_Name: M_QuitBTN_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10664,7 +10664,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

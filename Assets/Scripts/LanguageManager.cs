@@ -2,6 +2,7 @@
 using TMPro;
 using System.Collections.Generic;
 
+// <YSA>
 public class LanguageManager : MonoBehaviour
 {
     public TMP_Dropdown languageDropdown;
@@ -22,26 +23,18 @@ public class LanguageManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLanguage();
-        // 🔹 드롭다운 값이 변경될 때 이벤트 리스너 추가
+        // 시작 언어는 영어로 설정
+        SetLanguage(englishAsset, fontEnglishPrimary, fontEnglishSecondary);
+        // 드롭다운 옵션은 LanguageAsset에 등록된 "Language" 옵션을 그대로 사용
+        UpdateDropdownOptions();
+        // 시작 시 드롭다운의 선택은 현재 언어(영어)인 인덱스 0으로 설정
+        languageDropdown.value = 0;
+        languageDropdown.RefreshShownValue();
+        // 드롭다운 값 변경 이벤트 등록
         languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
     }
 
-    private void LoadLanguage()
-    {
-        SystemLanguage systemLanguage = Application.systemLanguage;
-
-        if (systemLanguage == SystemLanguage.Korean)
-        {
-            SetLanguage(koreanAsset, fontKoreanPrimary, fontKoreanSecondary);
-            languageDropdown.value = 1;
-        }
-        else
-        {
-            SetLanguage(englishAsset, fontEnglishPrimary, fontEnglishSecondary);
-            languageDropdown.value = 0;
-        }
-    }
+    // 언어와 폰트 정보를 저장하고 UI 업데이트
     private void SetLanguage(LanguageAsset asset, TMP_FontAsset primaryFont, TMP_FontAsset secondaryFont)
     {
         currentLanguageAsset = asset;
@@ -50,6 +43,7 @@ public class LanguageManager : MonoBehaviour
         ApplyLanguage();
     }
 
+    // 모든 텍스트 오브젝트에 대해 번역, 폰트, 크기, 스타일 적용 및 드롭다운 업데이트
     private void ApplyLanguage()
     {
         for (int i = 0; i < textObjects.Count; i++)
@@ -57,56 +51,55 @@ public class LanguageManager : MonoBehaviour
             if (textObjects[i] != null && i < keys.Count)
             {
                 string key = keys[i];
-
-                // 🔹 번역 적용
+                // 번역 적용
                 textObjects[i].text = currentLanguageAsset.GetTranslation(key);
-
-                // 🔹 폰트 설정 (보조 폰트 사용 여부 확인)
+                // 보조 폰트 사용 여부에 따라 폰트 설정
                 bool useSecondaryFont = currentLanguageAsset.UseSecondaryFont(key);
                 textObjects[i].font = useSecondaryFont ? currentFontSecondary : currentFontPrimary;
-
-                // 🔹 폰트 크기 설정 (설정된 경우에만 적용)
+                // 폰트 크기 설정 (설정된 경우)
                 float? fontSize = currentLanguageAsset.GetFontSize(key);
                 if (fontSize.HasValue)
                 {
                     textObjects[i].fontSize = fontSize.Value;
                 }
-
-                // 🔹 볼드 적용
+                // 볼드 적용
                 textObjects[i].fontStyle = currentLanguageAsset.IsBold(key) ? FontStyles.Bold : FontStyles.Normal;
             }
         }
 
-        // 🔹 드롭다운 옵션 및 폰트 업데이트
+        // 드롭다운 옵션 및 폰트 업데이트 (LanguageAsset에 설정된 옵션 사용)
         UpdateDropdownOptions();
-        UpdateDropdownFont();  // 🔹 추가됨 (언어 변경 시 폰트 크기도 즉시 반영)
-    }
-
-    private void UpdateDropdownOptions()
-    {
-        if (currentLanguageAsset == null) return;
-
-        foreach (var dropdown in currentLanguageAsset.dropdownTranslations)
-        {
-            if (dropdown.dropdownKey == "Language") // 🔹 드롭다운 키값 확인!
-            {
-                languageDropdown.ClearOptions();
-                languageDropdown.AddOptions(dropdown.options);
-            }
-        }
-
-        // 🔹 드롭다운의 폰트 및 폰트 크기 변경 적용
         UpdateDropdownFont();
     }
 
+    // LanguageAsset에 등록된 드롭다운 옵션을 사용하여 드롭다운을 업데이트
+    private void UpdateDropdownOptions()
+    {
+        if (currentLanguageAsset == null)
+            return;
+
+        languageDropdown.ClearOptions();
+        foreach (var dropdown in currentLanguageAsset.dropdownTranslations)
+        {
+            if (dropdown.dropdownKey == "Language")
+            {
+                // 드롭다운 옵션을 그대로 추가 (예: 영어 상태면 ["English", "Korean"], 한국어 상태면 ["한국어", "영어"])
+                languageDropdown.AddOptions(dropdown.options);
+                break;
+            }
+        }
+        languageDropdown.RefreshShownValue();
+    }
+
+    // 드롭다운의 폰트 및 폰트 크기 업데이트 (기존 코드 유지)
     private void UpdateDropdownFont()
     {
-        if (currentLanguageAsset == null) return;
+        if (currentLanguageAsset == null)
+            return;
 
         float? labelFontSize = currentLanguageAsset.GetDropdownLabelFontSize();
         float? itemFontSize = currentLanguageAsset.GetDropdownItemFontSize();
 
-        // 🔹 드롭다운 라벨 (선택된 항목) 폰트 및 크기 적용
         if (languageDropdown.captionText != null)
         {
             languageDropdown.captionText.font = currentFontSecondary;
@@ -116,7 +109,6 @@ public class LanguageManager : MonoBehaviour
             }
         }
 
-        // 🔹 드롭다운 리스트 항목 (펼쳤을 때) 폰트 및 크기 적용
         if (languageDropdown.itemText != null)
         {
             languageDropdown.itemText.font = currentFontSecondary;
@@ -127,15 +119,29 @@ public class LanguageManager : MonoBehaviour
         }
     }
 
+    // 드롭다운 값 변경 시 호출됨
     private void OnLanguageChanged(int index)
     {
-        if (index == 0) // 영어 선택
+        // index 0: 현재 언어(변경 없음) → 아무 작업도 하지 않음
+        if (index == 0)
         {
-            SetLanguage(englishAsset, fontEnglishPrimary, fontEnglishSecondary);
+            languageDropdown.value = 0;
+            return;
         }
-        else if (index == 1) // 한국어 선택
+        // index 1: 반대 언어 선택
+        if (index == 1)
         {
-            SetLanguage(koreanAsset, fontKoreanPrimary, fontKoreanSecondary);
+            // 현재 언어가 영어면 한국어로, 한국어면 영어로 전환
+            if (currentLanguageAsset == englishAsset)
+            {
+                SetLanguage(koreanAsset, fontKoreanPrimary, fontKoreanSecondary);
+            }
+            else if (currentLanguageAsset == koreanAsset)
+            {
+                SetLanguage(englishAsset, fontEnglishPrimary, fontEnglishSecondary);
+            }
+            // 전환 후 드롭다운 옵션이 다시 업데이트되므로, 선택 값은 현재 언어(인덱스 0)로 고정
+            languageDropdown.value = 0;
         }
     }
 }
