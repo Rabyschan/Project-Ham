@@ -2168,6 +2168,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e064493f1e63b548981ba0286565123, type: 3}
+--- !u!137 &117931285 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 244982604404575261, guid: e416f8ec750bb774a85e44a1f5b13ed5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1164287069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &120308594
 GameObject:
   m_ObjectHideFlags: 0
@@ -13766,6 +13772,21 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 244982604404575261, guid: e416f8ec750bb774a85e44a1f5b13ed5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 244982604404575261, guid: e416f8ec750bb774a85e44a1f5b13ed5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c6d83af76edb5741b4cc169b2c6df5f, type: 2}
+    - target: {fileID: 244982604404575261, guid: e416f8ec750bb774a85e44a1f5b13ed5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a67764ad6c823834fb6f28d05cd13fff, type: 2}
     - target: {fileID: 7297947731752795256, guid: e416f8ec750bb774a85e44a1f5b13ed5,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -18194,7 +18215,7 @@ MonoBehaviour:
   camType: 0
   hamster: {fileID: 813494791}
   c_hamster: {fileID: 329580915029168307}
-  hamsterMesh: {fileID: 0}
+  hamsterMesh: {fileID: 117931285}
   cart: {fileID: 599910897}
   hamsterPosition: {fileID: 211389353}
 --- !u!1001 &1489349591
@@ -25746,7 +25767,7 @@ MonoBehaviour:
   camType: 1
   hamster: {fileID: 813494791}
   c_hamster: {fileID: 329580915029168307}
-  hamsterMesh: {fileID: 0}
+  hamsterMesh: {fileID: 117931285}
   cart: {fileID: 599910897}
   hamsterPosition: {fileID: 211389353}
 --- !u!1001 &2133494299
@@ -26221,11 +26242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3363019487003222929}
   - component: {fileID: 641005604470436851}
-  - component: {fileID: 6145647917575877516}
-  - component: {fileID: 3434975741047774262}
-  - component: {fileID: 9012801474308809450}
-  - component: {fileID: 5429782320349491478}
-  - component: {fileID: 3622973990174942289}
   - component: {fileID: 9012801474308809451}
   m_Layer: 0
   m_Name: Cart_Hamster
@@ -26233,7 +26249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &346200205614290003
 GameObject:
   m_ObjectHideFlags: 0
@@ -26815,48 +26831,6 @@ Transform:
   - {fileID: 8210753366471646283}
   m_Father: {fileID: 599910896}
   m_LocalEulerAnglesHint: {x: -19.941, y: -395.223, z: -4.843}
---- !u!114 &3434975741047774262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329580915029168307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b59d399a9fd93646b4bea68c1402d99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  sideSpeed: 0.8
-  rotateSpeed: 180
-  jumpForce: 5
-  isGrounded: 0
-  isJumping: 0
-  isClimbing: 0
---- !u!136 &3622973990174942289
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329580915029168307}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5879524
-  m_Height: 1.830145
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.56992483, z: -0.059767663}
 --- !u!4 &3926948851134354514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4584326358864492115, guid: e2355e65d05338542b2143298291c93e,
@@ -27083,27 +27057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &5429782320349491478
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329580915029168307}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.313873, z: 2.022378}
-  m_Center: {x: 0, y: 0.61193645, z: -0.047611892}
 --- !u!4 &5520310601468990692
 Transform:
   m_ObjectHideFlags: 0
@@ -27200,22 +27153,6 @@ Transform:
   - {fileID: 6960029830365661246}
   m_Father: {fileID: 663617282356434183}
   m_LocalEulerAnglesHint: {x: 54.05147, y: 0.44989324, z: 0.050554857}
---- !u!114 &6145647917575877516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329580915029168307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddae289499563cf43ae44e5e105e9b5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCapsuleCollider: {fileID: 3622973990174942289}
-  frontBackAxis: 0
-  leftRightAxis: 0
-  upDownAxis: 0
 --- !u!4 &6375366710962752717
 Transform:
   m_ObjectHideFlags: 0
@@ -27655,6 +27592,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1419996154}
     m_Modifications:
+    - target: {fileID: 1457053871182106990, guid: d9b3010abefb78f498b9977c25ae27a5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457053871182106990, guid: d9b3010abefb78f498b9977c25ae27a5,
+        type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.724
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457053871182106990, guid: d9b3010abefb78f498b9977c25ae27a5,
+        type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 7.98
+      objectReference: {fileID: 0}
     - target: {fileID: 3131245126793452374, guid: d9b3010abefb78f498b9977c25ae27a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28045,20 +27997,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &9012801474308809450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329580915029168307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158aef6812e58ed40b3742fe8600aae9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frontBackAxisName: Vertical
-  leftRightAxisName: Horizontal
 --- !u!54 &9012801474308809451
 Rigidbody:
   m_ObjectHideFlags: 0
