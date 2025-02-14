@@ -34,7 +34,7 @@ public class PlayerAnimator : MonoBehaviour
     private Animator playerAnimator; //플레이어 캐릭터의 애니메이터
     AnimatorStateInfo stateInfo;
 
-    private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
+    private _PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private PlayerMovement playerMovement; //플레이어 이동을 알려주는 컴포넌트
     public CapsuleCollider playerCapsuleCollider; // <YSA> 플레이어 캐릭터의 캡슐 콜라이더
 
@@ -48,7 +48,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         playerAnimator = GetComponent<Animator>();
 
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<_PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
         playerCapsuleCollider = GetComponent<CapsuleCollider>();
     }

@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded = false; // 지면에 닿았는지 확인
     private bool climbStart = false; // <YSA> 식물에 닿아 오르길 시작할 건지 확인
 
-    private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
+    private _PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private PlayerAnimator playerAnimator; // <YSA> 플레이어 파라미터 활성화를 관리하는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
 
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<_PlayerInput>();
         playerAnimator = GetComponent<PlayerAnimator>();
         playerRigidbody = GetComponent<Rigidbody>();
         playerRigidbody.useGravity = true;

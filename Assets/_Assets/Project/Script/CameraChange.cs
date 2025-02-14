@@ -38,7 +38,7 @@ public class CameraChange : MonoBehaviour
 
                 hamster.SetActive(false);
                 c_hamster.SetActive(true);
-                cart.m_Speed = 0.5f;
+                cart.m_Speed = 10f;
                 break;
         }    
 

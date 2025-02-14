@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    public PlayerInput _chr;
+    public _PlayerInput _chr;
     Vector3 pos;
     Vector3 rot;
     [SerializeField] float _obstacleDist = 0.9f;
@@ -23,7 +23,7 @@ public class CameraMove : MonoBehaviour
         _maxDistance = 7f;
         if (_chr == null)
         {
-            _chr = GameObject.Find("@Player").GetComponent<PlayerInput>();
+            _chr = GameObject.Find("@Player").GetComponent<_PlayerInput>();
         }
         camDistance = _maxDistance;
         pos = _chr.transform.position - transform.forward * camDistance;

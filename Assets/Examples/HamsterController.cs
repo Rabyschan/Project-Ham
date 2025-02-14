@@ -7,7 +7,7 @@ public class HamsterController : MonoBehaviour
 
     [SerializeField] HamsterAnimationController animator;
     [SerializeField] Rigidbody rb;
-    [SerializeField] PlayerInput input;
+    [SerializeField] _PlayerInput input;
     [SerializeField] bool isGrounded;
 
     private Vector2 InputMove => new Vector2(input.leftRight, input.frontBack);
