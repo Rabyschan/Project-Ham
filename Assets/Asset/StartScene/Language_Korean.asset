@@ -118,6 +118,31 @@ MonoBehaviour:
     fontSize: 50
     useSecondaryFont: 1
     isBold: 0
+  - key: Pause
+    value: "\uC77C\uC2DC\uC815\uC9C0"
+    fontSize: 50
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseContinue
+    value: "\uACC4\uC18D\uD558\uAE30"
+    fontSize: 25
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseSave/Load
+    value: "\uC800\uC7A5/\uBD88\uB7EC\uC624\uAE30"
+    fontSize: 25
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseSettings
+    value: "\uC124\uC815"
+    fontSize: 25
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseQuit
+    value: "\uB098\uAC00\uAE30"
+    fontSize: 25
+    useSecondaryFont: 0
+    isBold: 0
   dropdownTranslations:
   - dropdownKey: Language
     options:

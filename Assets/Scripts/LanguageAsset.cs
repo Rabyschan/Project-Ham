@@ -25,8 +25,8 @@ public class LanguageAsset : ScriptableObject
     public List<LanguageData> translations;
     public List<DropdownData> dropdownTranslations;
 
-    public float dropdownLabelFontSize = 24f; // 🔹 선택된 항목의 폰트 크기
-    public float dropdownItemFontSize = 22f;  // 🔹 옵션 목록의 폰트 크기
+    public float dropdownLabelFontSize; // 🔹 선택된 항목의 폰트 크기
+    public float dropdownItemFontSize;  // 🔹 옵션 목록의 폰트 크기
 
     private Dictionary<string, LanguageData> translationDict;
     private Dictionary<string, List<string>> dropdownDict;

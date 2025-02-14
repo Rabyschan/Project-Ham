@@ -3326,7 +3326,7 @@ Transform:
   m_GameObject: {fileID: 211389352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.75, y: 6.39, z: -7.88}
+  m_LocalPosition: {x: 11.308, y: 6.214, z: -7.756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18173,7 +18173,7 @@ Transform:
   m_GameObject: {fileID: 1485208813}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.181, y: -2.294, z: -0.701}
+  m_LocalPosition: {x: 0.19, y: -2.349, z: -0.701}
   m_LocalScale: {x: 15.54216, y: 15.54216, z: 15.54216}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26243,6 +26243,7 @@ GameObject:
   - component: {fileID: 3363019487003222929}
   - component: {fileID: 641005604470436851}
   - component: {fileID: 9012801474308809451}
+  - component: {fileID: 9012801474308809452}
   m_Layer: 0
   m_Name: Cart_Hamster
   m_TagString: Untagged
@@ -28024,6 +28025,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &9012801474308809452
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329580915029168307}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &9097024424040068298
 Transform:
   m_ObjectHideFlags: 0

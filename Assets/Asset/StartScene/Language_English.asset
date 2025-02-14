@@ -118,6 +118,31 @@ MonoBehaviour:
     fontSize: 30
     useSecondaryFont: 1
     isBold: 0
+  - key: Pause
+    value: PAUSE
+    fontSize: 74
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseContinue
+    value: CONTINUE
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseSave/Load
+    value: SAVE/LOAD
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseSettings
+    value: SETTINGS
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
+  - key: PauseQuit
+    value: QUIT
+    fontSize: 34
+    useSecondaryFont: 0
+    isBold: 0
   dropdownTranslations:
   - dropdownKey: Language
     options:
