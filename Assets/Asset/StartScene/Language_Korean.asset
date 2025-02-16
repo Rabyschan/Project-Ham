@@ -88,13 +88,13 @@ MonoBehaviour:
     fontSize: 25
     useSecondaryFont: 0
     isBold: 0
-  - key: OptonMenuControll 2
-    value: "\uCEE8\uD2B8\uB864"
+  - key: OptionMenuGame 2
+    value: "\uAC8C\uC784"
     fontSize: 25
     useSecondaryFont: 0
     isBold: 0
-  - key: OptionMenuGame 2
-    value: "\uAC8C\uC784"
+  - key: OptonMenuControll 2
+    value: "\uCEE8\uD2B8\uB864"
     fontSize: 25
     useSecondaryFont: 0
     isBold: 0

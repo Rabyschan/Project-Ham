@@ -5,17 +5,27 @@ using UnityEngine.UI;
 
 /* <YSA> 
  * Pause 창
+ * 퍼즈창 키는 단축키(escape)
  */
 public class UIManage_Game : MonoBehaviour
 {
 
     #region 버튼의 onclick()사용/ 일부 스크립트 제어
+
+    public GameObject uiCanvas_Game;
+
     [Header("Panel")]
+    public GameObject pausePanel;
+    public GameObject saveLoadPanel;
+    public GameObject optionPanel;
+    public GameObject savePop;
     public GameObject quitPop;
 
 
     [Header("Audio")]
+    public AudioSource bgmAudioSource;
     public AudioSource sfxAudioSource;
+    public Slider bgmSlider;
     public Slider sfxSlider;
 
     private static UIManage_Game instance;
@@ -35,12 +45,27 @@ public class UIManage_Game : MonoBehaviour
 
     private void Start()
     {
-        InitializeUI();
+        uiCanvas_Game.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InitializeUI();
+        }
     }
 
     private void InitializeUI()
     {
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(true);
+        }
+        saveLoadPanel?.SetActive(false);
+        optionPanel?.SetActive(false);
         quitPop?.SetActive(false);
+        savePop?.SetActive(false);
     }
 
     // ✅ 메인 패널이 켜질 때마다 비디오 재생

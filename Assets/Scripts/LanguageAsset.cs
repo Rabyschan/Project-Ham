@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 // <YSA>
+
 [System.Serializable]
 public class LanguageData
 {
@@ -28,8 +30,10 @@ public class LanguageAsset : ScriptableObject
     public float dropdownLabelFontSize; // 🔹 선택된 항목의 폰트 크기
     public float dropdownItemFontSize;  // 🔹 옵션 목록의 폰트 크기
 
-    private Dictionary<string, LanguageData> translationDict;
+    public Dictionary<string, LanguageData> translationDict;
     private Dictionary<string, List<string>> dropdownDict;
+
+    [HideInInspector] public Dictionary<string, TextMeshProUGUI> uiObjects = new Dictionary<string, TextMeshProUGUI>();
 
     private void OnEnable()
     {
@@ -111,5 +115,27 @@ public class LanguageAsset : ScriptableObject
     public float? GetDropdownItemFontSize()
     {
         return dropdownItemFontSize > 0 ? dropdownItemFontSize : (float?)null;
+    }
+
+    public List<string> GetAllKeys()
+    {
+        List<string> keys = new List<string>();
+        foreach (var translation in translations)
+        {
+            keys.Add(translation.key);
+        }
+        return keys;
+    }
+    public void RegisterUIObject(string key, TextMeshProUGUI uiObject)
+    {
+        if (!uiObjects.ContainsKey(key))
+        {
+            uiObjects[key] = uiObject;
+        }
+    }
+
+    public void ClearUIObjects()
+    {
+        uiObjects.Clear(); // 🔥 씬이 바뀔 때 기존 UI 목록 초기화
     }
 }
