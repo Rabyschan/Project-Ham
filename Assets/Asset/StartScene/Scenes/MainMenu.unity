@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   save_Pop: {fileID: 1687053397}
   sceneLoader: {fileID: 975940574}
-  uiManager_Main: {fileID: 0}
+  uiManager_HT: {fileID: 1390094039}
 --- !u!1 &192110727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,8 +2745,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1072969783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 10.362488, y: 0}
   m_SizeDelta: {x: 40.7251, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3224,7 +3224,7 @@ RectTransform:
   m_Father: {fileID: 1362625262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3507,7 +3507,7 @@ GameObject:
   - component: {fileID: 531499376}
   - component: {fileID: 531499380}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: MainUICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3869,7 +3869,7 @@ RectTransform:
   m_Father: {fileID: 1041448514}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4298,7 +4298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &720800863
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4676,8 +4676,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1043863052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 10.3625, y: 0}
   m_SizeDelta: {x: 40.7251, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5405,6 +5405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfddf0a549c705e4a9d53be9ff1f5004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadSceneName: GameScene
   canvasGroup: {fileID: 1111007741}
   videoPlayer: {fileID: 42444145}
   videoRawImage: {fileID: 1983604239}
@@ -6037,6 +6038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfddf0a549c705e4a9d53be9ff1f5004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadSceneName: 
   canvasGroup: {fileID: 1111007741}
   videoPlayer: {fileID: 42444145}
   videoRawImage: {fileID: 1983604239}
@@ -6876,7 +6878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1212384499}
   m_Layer: 5
-  m_Name: MainOption
+  m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8032,6 +8034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390094037}
   - component: {fileID: 1390094038}
+  - component: {fileID: 1390094039}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -8061,7 +8064,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390094035}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4103b49fc3f7cf84c8be8900681f2acc, type: 3}
   m_Name: 
@@ -8073,6 +8076,37 @@ MonoBehaviour:
   savePop: {fileID: 1687053397}
   loadingCanvas: {fileID: 1111007738}
   videoplayer: {fileID: 42444145}
+  mainVideoTarget: {fileID: 21792319}
+  loadingVideoTarget: {fileID: 1983604239}
+  videoClips:
+  - {fileID: 32900000, guid: dbc0d4ac0b3cd1c46939161043473e75, type: 3}
+  - {fileID: 32900000, guid: e00c9b056c45bdb4fae6fbf72c4e8b0c, type: 3}
+  bgmAudioSource: {fileID: 953317031}
+  sfxAudioSource: {fileID: 113730259}
+  bgmSlider: {fileID: 1276978177}
+  sfxSlider: {fileID: 184148051}
+--- !u!114 &1390094039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390094035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec30365b63c3c954681d3cf349140780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainPanel: {fileID: 1811802296}
+  startPanel: {fileID: 393176713}
+  loadingCanvas: {fileID: 1111007738}
+  gameUICanvas: {fileID: 0}
+  pausePanel: {fileID: 0}
+  saveLoadPanel: {fileID: 0}
+  optionPanel: {fileID: 1212384498}
+  quitPopup: {fileID: 896017551}
+  savePopup: {fileID: 1687053397}
+  videoPlayer: {fileID: 42444145}
   mainVideoTarget: {fileID: 21792319}
   loadingVideoTarget: {fileID: 1983604239}
   videoClips:
@@ -9050,7 +9084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1687053398
 RectTransform:
   m_ObjectHideFlags: 0

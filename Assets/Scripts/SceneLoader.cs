@@ -7,6 +7,7 @@ using UnityEngine.Video;
 // <YSA> chatGPT
 public class SceneLoader : MonoBehaviour
 {
+    public string loadSceneName;
     public CanvasGroup canvasGroup; // ✅ UI 페이드 효과
     public VideoPlayer videoPlayer; // ✅ 비디오 플레이어
     public RawImage videoRawImage; // ✅ 비디오가 출력될 `RawImage`
@@ -32,7 +33,7 @@ public class SceneLoader : MonoBehaviour
 
     private IEnumerator LoadGameSceneCoroutine()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Test1");
+        AsyncOperation operation = SceneManager.LoadSceneAsync(loadSceneName);
         operation.allowSceneActivation = false; // 씬 자동 전환 막기
 
         //float fadeSpeed = 30f; // 페이드 인 속도 설정

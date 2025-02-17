@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 119498470}
   - component: {fileID: 119498469}
   m_Layer: 5
-  m_Name: Pause_BG
+  m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,7 +1079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 176524406}
   m_Layer: 5
-  m_Name: GameOption
+  m_Name: Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,13 +1905,14 @@ GameObject:
   m_Component:
   - component: {fileID: 289197201}
   - component: {fileID: 289197202}
+  - component: {fileID: 289197203}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &289197201
 Transform:
   m_ObjectHideFlags: 0
@@ -1934,7 +1935,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289197199}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 277b6c03fb36fba4c8b583cebdb7d69c, type: 3}
   m_Name: 
@@ -1945,6 +1946,35 @@ MonoBehaviour:
   optionPanel: {fileID: 176524405}
   savePop: {fileID: 973381946}
   quitPop: {fileID: 1924505102}
+  bgmAudioSource: {fileID: 860691128}
+  sfxAudioSource: {fileID: 2096348531}
+  bgmSlider: {fileID: 1800272439}
+  sfxSlider: {fileID: 949125949}
+--- !u!114 &289197203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289197199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec30365b63c3c954681d3cf349140780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainPanel: {fileID: 0}
+  startPanel: {fileID: 0}
+  loadingCanvas: {fileID: 0}
+  gameUICanvas: {fileID: 2078008223}
+  pausePanel: {fileID: 119498467}
+  saveLoadPanel: {fileID: 1027018875}
+  optionPanel: {fileID: 176524405}
+  quitPopup: {fileID: 1924505102}
+  savePopup: {fileID: 973381946}
+  videoPlayer: {fileID: 0}
+  mainVideoTarget: {fileID: 0}
+  loadingVideoTarget: {fileID: 0}
+  videoClips: []
   bgmAudioSource: {fileID: 860691128}
   sfxAudioSource: {fileID: 2096348531}
   bgmSlider: {fileID: 1800272439}
@@ -2378,7 +2408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355399541}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: PauseUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4826,7 +4856,6 @@ GameObject:
   - component: {fileID: 769051573}
   - component: {fileID: 769051572}
   - component: {fileID: 769051571}
-  - component: {fileID: 769051570}
   m_Layer: 5
   m_Name: ST_SaveYesBTN
   m_TagString: Untagged
@@ -4854,21 +4883,6 @@ RectTransform:
   m_AnchoredPosition: {x: -95, y: -195}
   m_SizeDelta: {x: 179, y: 82}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &769051570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769051568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f69c648cd4c36a4db6e7e11a9378b4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  save_Pop: {fileID: 973381946}
-  sceneLoader: {fileID: 0}
-  uiManager_Main: {fileID: 0}
 --- !u!114 &769051571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11100,7 +11114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1951362904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12483,7 +12497,7 @@ GameObject:
   - component: {fileID: 2078008225}
   - component: {fileID: 2078008224}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: GameUICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,7 +7,7 @@ public class LoadScene : MonoBehaviour
     //public Button startButton; // ✅ 버튼 오브젝트
     public GameObject save_Pop;
     public SceneLoader sceneLoader; // ✅ SceneLoader 스크립트 참조
-    public UIManage_Main uiManager_Main; // ✅ UIManager 스크립트 참조
+    public UIManager_HT uiManager_HT; // ✅ UIManager 스크립트 참조
 
     //private void Start()
     //{
@@ -20,9 +20,9 @@ public class LoadScene : MonoBehaviour
         //startButton.gameObject.SetActive(false); // ✅ 버튼 비활성화 (사라짐)
         save_Pop.SetActive(false);
         // ✅ UIManager에서 로딩 화면 실행 (비디오 변경 & UI 활성화)
-        if (uiManager_Main != null)
+        if (uiManager_HT != null)
         {
-            uiManager_Main.PlayLoadingScreen();
+            uiManager_HT.PlayLoadingScreen();
         }
 
         sceneLoader.LoadGameScene(); // ✅ SceneLoader의 씬 로딩 실행

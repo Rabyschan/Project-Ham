@@ -103,7 +103,6 @@ public class LanguageManagerGlobal : MonoBehaviour
         LanguageOption option = languageOptions[index];
         selectedLanguage = option.languageName;
         PlayerPrefs.SetString("SelectedLanguage", selectedLanguage);
-        Debug.Log(selectedLanguage);
         PlayerPrefs.Save();
         SetLanguage(option.languageAsset, option.primaryFont, option.secondaryFont);
     }
@@ -172,7 +171,6 @@ public class LanguageManagerGlobal : MonoBehaviour
         languageDropdown = FindObjectOfType<TMP_Dropdown>(true);
         if (languageDropdown != null)
         {
-            Debug.Log($"✅ languageDropdown 찾음: {languageDropdown.gameObject.name}");
             List<string> options = new List<string>();
             foreach (var opt in languageOptions)
             {
@@ -205,6 +203,14 @@ public class LanguageManagerGlobal : MonoBehaviour
         {
             if (dropdown.dropdownKey == "Language")
             {
+                int selectedindex = languageOptions.FindIndex(x => x.languageName == selectedLanguage);
+                if (selectedindex > 0)
+                {
+                    //선택된 언어를 리스트 맨 앞으로 이동
+                    LanguageOption selecteOption = languageOptions[selectedindex];
+                    languageOptions.RemoveAt(selectedindex);
+                    languageOptions.Insert(0, selecteOption);
+                }
                 // 드롭다운 옵션을 그대로 추가 (예: 영어 상태면 ["English", "Korean"], 한국어 상태면 ["한국어", "영어"])
                 languageDropdown.AddOptions(dropdown.options);
                 break;

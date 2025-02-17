@@ -58,6 +58,7 @@ public class UIManage_Game : MonoBehaviour
 
     private void InitializeUI()
     {
+        if(uiCanvas_Game != null) { uiCanvas_Game.SetActive(true); }
         if (pausePanel != null)
         {
             pausePanel.SetActive(true);
